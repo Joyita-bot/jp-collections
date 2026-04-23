@@ -1,0 +1,208 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --maroon: #741B1B;
+    --cream: #F5E6AD;
+    --black: #1A1A1A;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--white);
+    border-bottom: 1px solid #ddd;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: var(--maroon);
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--maroon);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background-image: url('https://via.placeholder.com/1920x1080?text=Luxury+Indian+Ethnic+Wear+Banner');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    background-color: rgba(245, 230, 173, 0.85); /* Semi-transparent Cream Overlay Box */
+    padding: 3rem 4rem;
+    text-align: center;
+    max-width: 600px;
+    border-radius: 4px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: var(--maroon);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--maroon);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #5A1515;
+    transform: translateY(-2px);
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4-column layout */
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.product-card {
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-info .price {
+    font-weight: 600;
+    color: var(--maroon);
+}
+
+/* Footer */
+footer {
+    padding: 2rem 0;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive Grid for Tablets and Phones */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
